@@ -20,12 +20,9 @@ int	ft_hex_len(unsigned	int nb)
 	return (len);
 }
 
-void	ft_print_hex(unsigned int nb, const char form)
+void	ft_print_hex(unsigned int nb, char *base, const char form)
 {
 	if (nb >= 16)
-	{
 		ft_print_hex(nb / 16);
-		ft_print_hex(nb % 16);
-	}
-	
+	ft_putchar(base[nb % 16]);
 }
