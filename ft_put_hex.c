@@ -27,9 +27,5 @@ void	ft_print_hex(unsigned int nb, const char form)
 		ft_print_hex(nb / 16);
 		ft_print_hex(nb % 16);
 	}
-	else
-		if (nb <= 9)
-		{
-			
-		}
+	
 }
