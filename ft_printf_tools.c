@@ -38,3 +38,15 @@ int	ft_putnbr_unsigned(unsigned int n)
 		i += ft_putchar(n + '0');
 	return (i);
 }
+
+size_t	ft_strlen(const char *s)
+{
+	int	e;
+
+	e = 0 ;
+	while (s[e] != '\0')
+	{
+		e++;
+	}
+	return (e);
+}
