@@ -1,3 +1,5 @@
+#include "ft_printf.h"
+
 int	ft_ptr_len(unsigned	int nb)
 {
 	int	len;
@@ -11,14 +13,15 @@ int	ft_ptr_len(unsigned	int nb)
 	return (len);
 }
 
-void	ft_ptr_hex(unsigned int nb, char *base, const char form)
+void	ft_ptr_hex(unsigned long nb, char *base, int *len)
 {
 	if (nb >= 16)
-		ft_print_hex(nb / 16);
+		ft_print_ptr(nb / 16);
 	ft_putchar(base[nb % 16]);
+	(*len)++;
 }
 
-int	ft_print_ptr(unsigned long ptr)
+int	ft_print_ptr(unsigned long long ptr)
 {
 	int	len;
 
@@ -27,9 +30,6 @@ int	ft_print_ptr(unsigned long ptr)
 	if (ptr == 0)
 		len += write(1, "0", 1);
 	else
-	{
-		ft_ptr_hex(ptr);
-		len += ft_ptr_len(ptr);
-	}
+		ft_ptr_hex(ptr, "0123456789abcdef", len);
 	return (len);
 }
