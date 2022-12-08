@@ -4,6 +4,7 @@
 /*--------------Librairies----------------*/
 
 #include <unistd.h>
+#include <stdarg.h>
 
 /*--------------Prototypes----------------*/
 
