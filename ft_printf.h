@@ -4,9 +4,9 @@
 /*--------------Librairies----------------*/
 
 #include <unistd.h>
+#include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdarg.h>
 
 /*--------------Prototypes----------------*/
 
@@ -20,7 +20,7 @@ size_t	ft_strlen(const char *s);
 static int	ft_count(long n);
 char	*ft_itoa(int n);
 int	ft_ptr_len(unsigned	int nb);
-void	ft_ptr_hex(unsigned int nb, char *base, const char form);
+int	ft_ptr_hex(unsigned int nb, char *base, int *len);
 int	ft_print_ptr(unsigned long ptr);
 int	ft_hex_len(unsigned	int nb);
 int	ft_put_hex(unsigned int nb, const char form);
