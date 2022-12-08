@@ -16,9 +16,9 @@ int ft_forms(va_list args, const char form)
 	else if (form == 's')
 		len += ft_putstr(va_arg(args, char *));
 	else if (form == 'p')
-		len += <fonction>(va_arg(args, unsigned long));
+		ft_ptr_hex(va_arg(args, unsigned long long), "0123456789abcdef", &len);
 	else if (form == 'd' || form == 'i')
-		len += ft_putnbr(va_arg(agrs, int));
+		len += ft_putnbr(va_arg(args, int));
 	else if (form == 'u')
 		len += ft_put_unsigned(va_arg(args, unsigned int));
 	else if (form == 'x' || form == 'X')
