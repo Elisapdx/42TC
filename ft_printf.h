@@ -18,7 +18,7 @@ int	ft_putnbr(int nbr);
 int	ft_putnbr_unsigned(unsigned int n);
 size_t	ft_strlen(const char *s);
 char	*ft_itoa(int n);
-int	ft_ptr_hex(unsigned int nb, char *base, int *len);
+void	ft_ptr_hex(unsigned int nb, char *base, int *len);
 int	ft_print_ptr(unsigned long ptr);
 int	ft_hex_len(unsigned	int nb);
 int	ft_put_hex(unsigned int nb, char *base);
