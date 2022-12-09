@@ -28,7 +28,7 @@ int ft_forms(va_list args, const char form)
 			base = "0123456789abcdef";
 		else
 			base = "0123456789ABCDEF";
-		len += ft_put_hex(va_arg(args, unsigned int),base, form);
+		len += ft_put_hex(va_arg(args, unsigned int),base);
 	}
 	else if (form == '%')
 		len += ft_putchar(form);
