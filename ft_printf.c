@@ -16,7 +16,7 @@ int ft_forms(va_list args, const char form)
 	else if (form == 's')
 		len += ft_putstr(va_arg(args, char *));
 	else if (form == 'p')
-		ft_ptr_hex(va_arg(args, unsigned long long), "0123456789abcdef", &len);
+		ft_ptr_hex(va_arg(args, unsigned long));
 	else if (form == 'd' || form == 'i')
 		len += ft_putnbr(va_arg(args, int));
 	else if (form == 'u')
@@ -42,7 +42,7 @@ int	ft_printf(const char *str, ...)
 		if (str[i] == '%')
 		{
 			len += ft_forms(args, str[i + 1]);
-			i++;      /* ou i + 2 */
+			i++;
 		}
 		else
 			len += ft_putchar(str[i]);
