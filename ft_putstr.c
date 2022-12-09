@@ -13,13 +13,16 @@ size_t	ft_strlen(const char *s)
 int	ft_putstr(char *str)
 {
 	int	len;
+	int	i;
 	
+	i = 0;
 	if (!str)
 	{
 		write(1, "(NULL)", 6);
 		return (6);
 	}
 	len = ft_strlen(str);
-	write(1, str, len);
+	while (str[i])
+		write(1, &str[i++], 1);
 	return (len);
 }
