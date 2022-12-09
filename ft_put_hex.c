@@ -1,30 +1,18 @@
 #include "ft_printf.h"
 
-int	ft_hex_len(unsigned	int nb)
+int	ft_put_hex(unsigned int nb, char *base)
 {
 	int	len;
-
+	
 	len = 0;
-	while (nb != 0)
-	{
-		len++;
-		nb = nb / 16;
-	}
+	ft_conv_hex(nb, base, &len);
 	return (len);
 }
 
-int	ft_put_hex(unsigned int nb, char *base, const char form)
-{
-	if (nb == 0)
-		write(1, "0", 1);
-	else
-		ft_print_hex(nb, base, form);
-	return (ft_hex_len(nb));
-}
-
-void	ft_print_hex(unsigned int nb, char *base, const char form)
+void	ft_conv_hex(long nb, char *base, int *len)
 {
 	if (nb >= 16)
-		ft_print_hex(nb / 16, base, form);
+		ft_conv_hex(nb / 16, base, len);
 	ft_putchar(base[nb % 16]);
+	(*len)++;
 }
