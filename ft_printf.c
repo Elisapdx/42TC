@@ -9,6 +9,7 @@ int	ft_putchar(int c)
 int ft_forms(va_list args, const char form)
 {
 	int	len;
+	char *base;
 	
 	len = 0;
 	if (form == 'c')
@@ -22,7 +23,13 @@ int ft_forms(va_list args, const char form)
 	else if (form == 'u')
 		len += ft_put_unsigned(va_arg(args, unsigned int));
 	else if (form == 'x' || form == 'X')
-		len += ft_put_hex(va_arg(args, unsigned int), form);
+	{
+		if (form == 'x')
+			base = "0123456789abcdef";
+		else
+			base = "0123456789ABCDEF";
+		len += ft_put_hex(va_arg(args, unsigned int),base, form);
+	}
 	else if (form == '%')
 		len += ft_putchar(form);
 	return(len);
